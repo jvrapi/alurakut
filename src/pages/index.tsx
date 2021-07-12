@@ -3,14 +3,12 @@ import MainGrid from '../components/MainGrid'
 import ProfileArea from '../components/ProfileArea'
 import WelcomeArea from '../components/WelcomeArea'
 import ProfileRelationsArea from '../components/ProfileRelations'
-import { AlurakutMenu } from '../lib/AluraKutCommons'
-import { useUser } from '../hooks/useUser'
-const Home: React.FC = () => {
-  const { gitHubUser } = useUser()
+import AlurakutMenu from '../components/AlurakutMenu'
 
+const Home: React.FC = () => {
   return (
     <>
-      <AlurakutMenu githubUser={gitHubUser} />
+      <AlurakutMenu />
       <MainGrid>
         <ProfileArea />
 

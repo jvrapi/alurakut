@@ -1,6 +1,7 @@
 import React from 'react'
-import { OrkutNostalgicIconSet } from '../../lib/AluraKutCommons'
+
 import Box from '../Box'
+import OrkutNostalgicIconSet from '../OrkutNostalgicIconSet'
 
 import { Container } from './styles'
 
