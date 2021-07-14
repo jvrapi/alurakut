@@ -1,31 +1,44 @@
 import React from 'react'
 
-import { Container } from './styles'
+import { Container, ShowAll } from './styles'
 
-const ProfileRelationsBox: React.FC = () => {
-  const favoritePersons = [
-    'rafaballerini',
-    'juunegreiros',
-    'omariosouto',
-    'peas',
-    'marcobrunodev',
-    'felipefialho'
-  ]
+type ProfileRelationsBoxData = {
+  id: string
+  name: string
+  image: string
+  link?: string
+}
+
+type ProfileRelationsBoxProps = {
+  data: ProfileRelationsBoxData[]
+  title: string
+}
+
+const ProfileRelationsBox: React.FC<ProfileRelationsBoxProps> = ({
+  data,
+  title
+}) => {
   return (
     <Container>
       <h2 className="smallTitle">
-        Pessoas da comunidade ({favoritePersons.length})
+        {title} ({data.length})
       </h2>
       <ul>
-        {favoritePersons.map(favorite => (
-          <li key={favorite}>
-            <a href={`/users/${favorite}`}>
-              <img src={`https://github.com/${favorite}.png`} />
-              <span>{favorite}</span>
+        {data.slice(0, 6).map(item => (
+          <li key={item.id}>
+            <a href={item.link ? item.link : '/'}>
+              <img src={item.image} />
+              <span>{item.name}</span>
             </a>
           </li>
         ))}
       </ul>
+
+      {data.length > 6 && (
+        <>
+          <hr /> <ShowAll href="/"> Ver todos</ShowAll>{' '}
+        </>
+      )}
     </Container>
   )
 }

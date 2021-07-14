@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Box from '../../components/Box'
+import Link from '../Link'
 
 export const Container = styled(Box)`
   ul {
@@ -49,4 +50,9 @@ export const Container = styled(Box)`
       background-image: linear-gradient(0deg, #00000073, transparent);
     }
   }
+`
+
+export const ShowAll = styled(Link)`
+  text-decoration: none;
+  color: #2e7bb4;
 `
