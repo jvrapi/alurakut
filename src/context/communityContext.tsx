@@ -1,9 +1,9 @@
 import React, { createContext, ReactNode, useEffect, useState } from 'react'
 
 type Community = {
-  id: string
+  id: number
   name: string
-  image: string
+  imageURL: string
   link?: string
 }
 
@@ -29,9 +29,9 @@ const CommunityContextProvider: React.FC<CommunityContextProviderProps> = ({
 
   useEffect(() => {
     updateCommunities({
-      id: new Date().toISOString(),
+      id: new Date().getTime(),
       name: 'Eu odeio acordar cedo',
-      image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg',
+      imageURL: 'https://alurakut.vercel.app/capa-comunidade-01.jpg',
       link: 'https://github.com/jvrapi'
     })
   }, [])

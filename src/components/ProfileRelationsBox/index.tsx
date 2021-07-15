@@ -2,10 +2,10 @@ import React from 'react'
 
 import { Container, ShowAll } from './styles'
 
-type ProfileRelationsBoxData = {
-  id: string
+export type ProfileRelationsBoxData = {
+  id: number
   name: string
-  image: string
+  imageURL: string
   link?: string
 }
 
@@ -27,7 +27,7 @@ const ProfileRelationsBox: React.FC<ProfileRelationsBoxProps> = ({
         {data.slice(0, 6).map(item => (
           <li key={item.id}>
             <a href={item.link ? item.link : '/'}>
-              <img src={item.image} />
+              <img src={item.imageURL} />
               <span>{item.name}</span>
             </a>
           </li>
